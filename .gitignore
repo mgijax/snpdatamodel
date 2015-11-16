@@ -1,0 +1,10 @@
+logs/
+bin/
+target/
+build/
+dist/
+.settings/
+solr/ConsensusSNPIndex/
+solr/SearchSNPIndex/
+config.properties
+logging.log

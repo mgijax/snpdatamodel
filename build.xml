@@ -1,0 +1,67 @@
+<project name="snpdatamodel" default="jar" basedir=".">
+	
+	<!-- To get maven to download the deps run the following command:
+		mvn dependency:copy-dependencies -DoutputDirectory=lib
+	-->
+	
+	<description>
+		snpdatamodel build file
+	</description>
+
+	<property name="src" location="src"/>
+	<property name="lib" location="lib"/>
+	<property name="deploy" location="dist"/>
+	<property name="unittestoutput.dir" location="unittest-results" />
+	
+	<property environment="env"/>
+
+	<path id="build.classpath">
+		<fileset dir="lib">
+			<include name="**/*.jar"/>
+		</fileset>
+	</path>
+
+	<target name="dependencies">
+		<exec executable="mvn">
+			<arg value="dependency:copy-dependencies"/>
+			<arg value="-DoutputDirectory=lib"/>
+	  </exec>
+	</target>
+
+	<target name="init">
+		<mkdir dir="build"/>
+		<mkdir dir="dist"/>
+	</target>
+
+	<target name="clean" description="clean up" >
+		<delete dir="build"/>
+		<delete dir="dist"/>
+	</target>	
+
+	<!-- compile -->
+	<target name="compile" depends="clean, init" >
+		<javac debug="on" srcdir="src" destdir="build" classpathref="build.classpath" />
+	</target>
+	
+	<target name="unittest" depends="compile">
+		<echo>Running unit tests, output should be in ${unittestoutput.dir}</echo>
+		<mkdir dir="${unittestoutput.dir}"/>
+		<junit fork="yes" forkmode="once" failureproperty="junit.failure" printsummary="yes" >
+			<classpath>
+				<path refid="build.classpath" />
+			</classpath>
+			<formatter type="xml" usefile="true" />
+			<batchtest todir="${unittestoutput.dir}">
+				<fileset dir="build" includes="unittest/**/*Test.class" />
+			</batchtest>
+		</junit>
+		<fail message="Test failure detected, check test results." if="junit.failure" />
+	</target>
+	
+	<target name="jar" depends="unittest" description="Generates a jar.">
+		<jar jarfile="dist/snpdatamodel.jar" basedir="build" excludes="**/*Test.class">
+			<zipgroupfileset dir="lib" />
+		</jar>
+	</target>
+
+</project>
