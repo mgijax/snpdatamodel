@@ -8,12 +8,7 @@
 		snpdatamodel build file
 	</description>
 
-	<property name="src" location="src"/>
-	<property name="lib" location="lib"/>
-	<property name="deploy" location="dist"/>
-	<property name="unittestoutput.dir" location="unittest-results" />
-	
-	<property environment="env"/>
+	<property file="build.properties" />
 
 	<path id="build.classpath">
 		<fileset dir="lib">
@@ -36,22 +31,24 @@
 	<target name="clean" description="clean up" >
 		<delete dir="build"/>
 		<delete dir="dist"/>
+		<delete dir="target"/>
+		<delete dir="unittest-results"/>
 	</target>	
 
 	<!-- compile -->
 	<target name="compile" depends="clean, init" >
-		<javac debug="on" srcdir="src" destdir="build" classpathref="build.classpath" />
+		<javac debug="on" srcdir="src" destdir="build" classpathref="build.classpath" includeantruntime="false" />
 	</target>
 	
 	<target name="unittest" depends="compile">
-		<echo>Running unit tests, output should be in ${unittestoutput.dir}</echo>
-		<mkdir dir="${unittestoutput.dir}"/>
+		<echo>Running unit tests, output should be in unittest-results</echo>
+		<mkdir dir="unittest-results"/>
 		<junit fork="yes" forkmode="once" failureproperty="junit.failure" printsummary="yes" >
 			<classpath>
 				<path refid="build.classpath" />
 			</classpath>
 			<formatter type="xml" usefile="true" />
-			<batchtest todir="${unittestoutput.dir}">
+			<batchtest todir="unittest-results">
 				<fileset dir="build" includes="unittest/**/*Test.class" />
 			</batchtest>
 		</junit>
