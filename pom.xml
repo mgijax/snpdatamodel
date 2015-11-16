@@ -3,7 +3,7 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<artifactId>SNP-DateModel</artifactId>
+	<artifactId>SNP-DataModel</artifactId>
 	<groupId>org.jax.mgi.snpdatamodel</groupId>
 	<packaging>jar</packaging>
 	<version>0.0.1</version>
