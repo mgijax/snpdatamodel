@@ -57,6 +57,10 @@ public class PrinterUtil {
 		out.println(output);
 		output = "";
 	}
+	
+	public String generateHTMLOutput() {
+		return "<pre>" + generateOutput() + "</pre>";
+	}
 
 	public String generateOutput() {
 		String ret = output;
