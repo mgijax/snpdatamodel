@@ -2,8 +2,6 @@ package org.jax.mgi.snpdatamodel.visitors;
 
 import java.io.PrintStream;
 
-import org.apache.log4j.Logger;
-
 public class PrinterUtil {
 
 	private int indentAmount = 3;
@@ -47,7 +45,11 @@ public class PrinterUtil {
 		output += in;
 	}
 
-	public void generateOutput(Logger logger) {
+	public void generateOutputLog4j(org.apache.log4j.Logger logger) {
+		logger.debug(output);
+		output = "";
+	}
+	public void generateOutputSlf4j(org.slf4j.Logger logger) {
 		logger.debug(output);
 		output = "";
 	}
