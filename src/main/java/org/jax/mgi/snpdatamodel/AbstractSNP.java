@@ -7,4 +7,5 @@ import org.jax.mgi.snpdatamodel.visitors.VisitorInterface;
 public abstract class AbstractSNP implements Serializable {
 
 	public abstract void Accept(VisitorInterface pi);
+
 }

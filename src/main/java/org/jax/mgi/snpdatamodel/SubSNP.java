@@ -1,5 +1,6 @@
 package org.jax.mgi.snpdatamodel;
 
+import java.util.LinkedHashMap;
 import java.util.List;
 
 import org.jax.mgi.snpdatamodel.visitors.VisitorInterface;
@@ -15,7 +16,7 @@ public class SubSNP extends AbstractSNP {
 	private String submitterId;
 	private boolean exemplar;
 
-	private List<PopulationSNP> populations;
+	private LinkedHashMap<String, PopulationSNP> populations;
 	
 	public int getSubSnpKey() {
 		return subSnpKey;
@@ -59,10 +60,10 @@ public class SubSNP extends AbstractSNP {
 	public void setExemplar(boolean exemplar) {
 		this.exemplar = exemplar;
 	}
-	public List<PopulationSNP> getPopulations() {
+	public LinkedHashMap<String, PopulationSNP> getPopulations() {
 		return populations;
 	}
-	public void setPopulations(List<PopulationSNP> populations) {
+	public void setPopulations(LinkedHashMap<String, PopulationSNP> populations) {
 		this.populations = populations;
 	}
 
