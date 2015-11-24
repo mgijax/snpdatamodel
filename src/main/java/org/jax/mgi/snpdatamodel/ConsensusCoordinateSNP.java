@@ -2,6 +2,7 @@ package org.jax.mgi.snpdatamodel;
 
 import java.util.List;
 
+import org.codehaus.jackson.annotate.JsonIgnore;
 import org.jax.mgi.snpdatamodel.visitors.VisitorInterface;
 
 public class ConsensusCoordinateSNP extends AbstractSNP {
@@ -65,6 +66,13 @@ public class ConsensusCoordinateSNP extends AbstractSNP {
 	}
 	public void setMarkers(List<ConsensusMarkerSNP> markers) {
 		this.markers = markers;
+	}
+	
+	@JsonIgnore
+	public String getStrandFormatted() {
+		if("f".equals(strand)) return "forward";
+		if("r".equals(strand)) return "reverse";
+		return "";
 	}
 	
 	@Override
