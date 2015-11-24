@@ -31,7 +31,7 @@ public class PrintVisitor extends PrinterUtil implements VisitorInterface {
 
 		if(subSNP.getPopulations() != null) {
 			printi("Populations: [");
-			for(PopulationSNP p: subSNP.getPopulations().values()) {
+			for(PopulationSNP p: subSNP.getPopulations()) {
 				p.Accept(this);
 			}
 			printu("]");

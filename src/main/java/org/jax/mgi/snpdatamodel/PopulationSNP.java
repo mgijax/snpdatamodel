@@ -7,11 +7,18 @@ import org.jax.mgi.snpdatamodel.visitors.VisitorInterface;
 
 public class PopulationSNP extends AbstractSNP {
 
+	private int populationKey;
 	private String accid;
 	private String subHandleName;
 	private String populationName;
 	private List<AlleleSNP> alleles;
 	
+	public int getPopulationKey() {
+		return populationKey;
+	}
+	public void setPopulationKey(int populationKey) {
+		this.populationKey = populationKey;
+	}
 	public String getAccid() {
 		return accid;
 	}
@@ -43,6 +50,7 @@ public class PopulationSNP extends AbstractSNP {
 	}
 	public PopulationSNP dup() {
 		PopulationSNP p = new PopulationSNP();
+		p.setPopulationKey(populationKey);
 		p.setAccid(accid);
 		p.setPopulationName(populationName);
 		p.setSubHandleName(subHandleName);
