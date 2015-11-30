@@ -14,6 +14,8 @@ public class ConsensusMarkerSNP extends AbstractSNP {
 	private String residue;
 	private String aaPosition;
 	private String readingFrame;
+	private int distanceFrom;
+	private String distanceDirection;
 	
 	public String getAccid() {
 		return accid;
@@ -74,6 +76,18 @@ public class ConsensusMarkerSNP extends AbstractSNP {
 	}
 	public void setReadingFrame(String readingFrame) {
 		this.readingFrame = readingFrame;
+	}
+	public int getDistanceFrom() {
+		return distanceFrom;
+	}
+	public void setDistanceFrom(int distanceFrom) {
+		this.distanceFrom = distanceFrom;
+	}
+	public String getDistanceDirection() {
+		return distanceDirection;
+	}
+	public void setDistanceDirection(String distanceDirection) {
+		this.distanceDirection = distanceDirection;
 	}
 	
 	@Override

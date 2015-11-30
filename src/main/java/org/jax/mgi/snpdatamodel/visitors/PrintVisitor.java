@@ -112,6 +112,8 @@ public class PrintVisitor extends PrinterUtil implements VisitorInterface {
 		printiu("Residue: " + consensusMarkerSNP.getResidue());
 		printiu("AaPosition: " + consensusMarkerSNP.getAaPosition());
 		printiu("ReadingFrame: " + consensusMarkerSNP.getReadingFrame());
+		printiu("Distance From: " + consensusMarkerSNP.getDistanceFrom());
+		printiu("Distance Direction: " + consensusMarkerSNP.getDistanceDirection());
 		printu("}");
 	}
 
