@@ -1,6 +1,7 @@
 package org.jax.mgi.snpdatamodel.visitors;
 
 import org.jax.mgi.snpdatamodel.AlleleSNP;
+import org.jax.mgi.snpdatamodel.ConsensusAlleleSNP;
 import org.jax.mgi.snpdatamodel.ConsensusCoordinateSNP;
 import org.jax.mgi.snpdatamodel.ConsensusMarkerSNP;
 import org.jax.mgi.snpdatamodel.ConsensusSNP;
@@ -9,9 +10,19 @@ import org.jax.mgi.snpdatamodel.SubSNP;
 
 public class PrintVisitor extends PrinterUtil implements VisitorInterface {
 
+	
 	@Override
 	public void Visit(AlleleSNP alleleSNP) {
 		printi("AlleleSNP: {");
+		printiu("Allele: " + alleleSNP.getAllele());
+		printiu("Strain: " + alleleSNP.getStrain());
+
+		printu("}");
+	}	
+	
+	@Override
+	public void Visit(ConsensusAlleleSNP alleleSNP) {
+		printi("ConsensusAlleleSNP: {");
 		printiu("Allele: " + alleleSNP.getAllele());
 		printiu("Strain: " + alleleSNP.getStrain());
 		printiu("Conflict: " + alleleSNP.isConflict());
@@ -69,9 +80,9 @@ public class PrintVisitor extends PrinterUtil implements VisitorInterface {
 			printu("]");
 		}
 		
-		if(consensusSNP.getAlleles() != null) {
+		if(consensusSNP.getConsensusAlleles() != null) {
 			printi("Alleles: [");
-			for(AlleleSNP a: consensusSNP.getAlleles()) {
+			for(ConsensusAlleleSNP a: consensusSNP.getConsensusAlleles()) {
 				a.Accept(this);
 			}
 			printu("]");

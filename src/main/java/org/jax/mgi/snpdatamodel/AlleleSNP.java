@@ -6,7 +6,6 @@ public class AlleleSNP extends AbstractSNP {
 
 	private String allele;
 	private String strain;
-	private boolean conflict;
 	
 	public String getAllele() {
 		return allele;
@@ -19,12 +18,6 @@ public class AlleleSNP extends AbstractSNP {
 	}
 	public void setStrain(String strain) {
 		this.strain = strain;
-	}
-	public boolean isConflict() {
-		return conflict;
-	}
-	public void setConflict(boolean conflict) {
-		this.conflict = conflict;
 	}
 	
 	@Override

@@ -20,7 +20,7 @@ public class ConsensusSNP extends AbstractSNP {
 
 	private List<SubSNP> subSNPs;
 	private List<ConsensusCoordinateSNP> consensusCoordinates;
-	private List<AlleleSNP> alleles;
+	private List<ConsensusAlleleSNP> consensusAlleles;
 	
 	public int getConsensusKey() {
 		return consensusKey;
@@ -88,11 +88,11 @@ public class ConsensusSNP extends AbstractSNP {
 	public void setConsensusCoordinates(List<ConsensusCoordinateSNP> consensusCoordinates) {
 		this.consensusCoordinates = consensusCoordinates;
 	}
-	public List<AlleleSNP> getAlleles() {
-		return alleles;
+	public List<ConsensusAlleleSNP> getConsensusAlleles() {
+		return consensusAlleles;
 	}
-	public void setAlleles(List<AlleleSNP> alleles) {
-		this.alleles = alleles;
+	public void setConsensusAlleles(List<ConsensusAlleleSNP> consensusAlleles) {
+		this.consensusAlleles = consensusAlleles;
 	}
 	
 	@JsonIgnore

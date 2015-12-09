@@ -1,6 +1,7 @@
 package org.jax.mgi.snpdatamodel.visitors;
 
 import org.jax.mgi.snpdatamodel.AlleleSNP;
+import org.jax.mgi.snpdatamodel.ConsensusAlleleSNP;
 import org.jax.mgi.snpdatamodel.ConsensusCoordinateSNP;
 import org.jax.mgi.snpdatamodel.ConsensusMarkerSNP;
 import org.jax.mgi.snpdatamodel.ConsensusSNP;
@@ -16,5 +17,6 @@ public interface VisitorInterface {
 	void Visit(ConsensusSNP consensusSNP);
 	void Visit(ConsensusMarkerSNP consensusMarkerSNP);
 	void Visit(ConsensusCoordinateSNP consensusCoordinateSNP);
+	void Visit(ConsensusAlleleSNP alleleSNP);
 	
 }
