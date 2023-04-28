@@ -1,11 +1,12 @@
 package org.jax.mgi.snpdatamodel;
 
-import java.util.Arrays;
 import java.util.List;
 
 import org.codehaus.jackson.annotate.JsonIgnore;
-import org.jax.mgi.snpdatamodel.visitors.VisitorInterface;
 
+import lombok.Data;
+
+@Data
 public class ConsensusSNP extends AbstractSNP {
 
 	private int consensusKey;
@@ -21,79 +22,6 @@ public class ConsensusSNP extends AbstractSNP {
 	private List<SubSNP> subSNPs;
 	private List<ConsensusCoordinateSNP> consensusCoordinates;
 	private List<ConsensusAlleleSNP> consensusAlleles;
-	
-	public int getConsensusKey() {
-		return consensusKey;
-	}
-	public void setConsensusKey(int consensusKey) {
-		this.consensusKey = consensusKey;
-	}
-	public String getAccid() {
-		return accid;
-	}
-	public void setAccid(String accid) {
-		this.accid = accid;
-	}
-	public String getVariationClass() {
-		return variationClass;
-	}
-	public void setVariationClass(String variationClass) {
-		this.variationClass = variationClass;
-	}
-	public String getAlleleSummary() {
-		return alleleSummary;
-	}
-	public void setAlleleSummary(String alleleSummary) {
-		this.alleleSummary = alleleSummary;
-	}
-	public String getIupaccode() {
-		return iupaccode;
-	}
-	public void setIupaccode(String iupaccode) {
-		this.iupaccode = iupaccode;
-	}
-	public String getBuildCreated() {
-		return buildCreated;
-	}
-	public void setBuildCreated(String buildCreated) {
-		this.buildCreated = buildCreated;
-	}
-	public String getBuildUpdated() {
-		return buildUpdated;
-	}
-	public void setBuildUpdated(String buildUpdated) {
-		this.buildUpdated = buildUpdated;
-	}
-	public String getFlank5Prime() {
-		return flank5Prime;
-	}
-	public void setFlank5Prime(String flank5Prime) {
-		this.flank5Prime = flank5Prime;
-	}
-	public String getFlank3Prime() {
-		return flank3Prime;
-	}
-	public void setFlank3Prime(String flank3Prime) {
-		this.flank3Prime = flank3Prime;
-	}
-	public List<SubSNP> getSubSNPs() {
-		return subSNPs;
-	}
-	public void setSubSNPs(List<SubSNP> subSNPs) {
-		this.subSNPs = subSNPs;
-	}
-	public List<ConsensusCoordinateSNP> getConsensusCoordinates() {
-		return consensusCoordinates;
-	}
-	public void setConsensusCoordinates(List<ConsensusCoordinateSNP> consensusCoordinates) {
-		this.consensusCoordinates = consensusCoordinates;
-	}
-	public List<ConsensusAlleleSNP> getConsensusAlleles() {
-		return consensusAlleles;
-	}
-	public void setConsensusAlleles(List<ConsensusAlleleSNP> consensusAlleles) {
-		this.consensusAlleles = consensusAlleles;
-	}
 	
 	@JsonIgnore
 	public String getJBrowserLink(String url) {
@@ -137,9 +65,5 @@ public class ConsensusSNP extends AbstractSNP {
 		}
 		return ret.toString();
 	}
-	
-	@Override
-	public void Accept(VisitorInterface pi) {
-		pi.Visit(this);
-	}
+
 }
