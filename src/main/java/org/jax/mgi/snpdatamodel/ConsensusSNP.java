@@ -5,8 +5,10 @@ import java.util.List;
 import org.codehaus.jackson.annotate.JsonIgnore;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 @Data
+@EqualsAndHashCode(callSuper=false)
 public class ConsensusSNP extends AbstractSNP {
 
 	private int consensusKey;

@@ -4,8 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 @Data
+@EqualsAndHashCode(callSuper=false)
 public class PopulationSNP extends AbstractSNP {
 
 	private int populationKey;

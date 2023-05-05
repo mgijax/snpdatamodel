@@ -5,8 +5,10 @@ import java.util.LinkedHashMap;
 import java.util.List;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 @Data
+@EqualsAndHashCode(callSuper=false)
 public class SubSNP extends AbstractSNP {
 	
 	private int subSnpKey;

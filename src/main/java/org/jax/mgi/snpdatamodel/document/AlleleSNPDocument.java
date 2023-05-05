@@ -3,8 +3,10 @@ package org.jax.mgi.snpdatamodel.document;
 import java.util.List;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 @Data
+@EqualsAndHashCode(callSuper=false)
 public class AlleleSNPDocument extends BaseESDocument {
 
 	private String consensussnp_accid;
