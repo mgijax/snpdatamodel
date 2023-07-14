@@ -1,5 +1,7 @@
 package org.jax.mgi.snpdatamodel.document;
 
-public class BaseESDocument {
+import java.io.Serializable;
+
+public class BaseESDocument implements Serializable {
 
 }
