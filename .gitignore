@@ -10,3 +10,6 @@ config.properties
 logging.log
 Configuration
 /target/
+.settings
+.project
+.classpath
