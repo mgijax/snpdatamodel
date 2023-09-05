@@ -9,7 +9,6 @@ import lombok.EqualsAndHashCode;
 @EqualsAndHashCode(callSuper=false)
 public class AlleleSNPDocument extends BaseESDocument {
 
-	private String consensussnp_accid;
 	private String chromosome;
 	private Double startcoordinate;
 	private String varclass;
@@ -20,6 +19,5 @@ public class AlleleSNPDocument extends BaseESDocument {
 	private String allele;
 	private List<String> samestrains;
 	private List<String> diffstrains;
-	
 	
 }

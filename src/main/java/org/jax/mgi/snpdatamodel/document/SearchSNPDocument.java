@@ -9,7 +9,6 @@ import lombok.EqualsAndHashCode;
 @EqualsAndHashCode(callSuper=false)
 public class SearchSNPDocument extends BaseESDocument {
 
-	private String consensussnp_accid;
 	private String chromosome;
 	private Double startcoordinate;
 	private String varclass;

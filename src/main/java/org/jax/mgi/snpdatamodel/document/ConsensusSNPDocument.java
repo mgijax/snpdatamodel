@@ -9,6 +9,5 @@ import lombok.EqualsAndHashCode;
 @EqualsAndHashCode(callSuper=false)
 public class ConsensusSNPDocument extends BaseESDocument {
 
-	private String consensussnp_accid;
 	private ConsensusSNP objectJSONData;
 }
