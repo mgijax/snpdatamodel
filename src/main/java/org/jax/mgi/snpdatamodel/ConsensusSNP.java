@@ -11,7 +11,7 @@ import lombok.EqualsAndHashCode;
 @EqualsAndHashCode(callSuper=false)
 public class ConsensusSNP extends AbstractSNP {
 
-	private int consensusKey;
+	private String consensusKey;
 	private String accid;
 	private String variationClass;
 	private String alleleSummary;

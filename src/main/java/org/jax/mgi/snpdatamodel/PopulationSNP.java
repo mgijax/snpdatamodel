@@ -10,7 +10,7 @@ import lombok.EqualsAndHashCode;
 @EqualsAndHashCode(callSuper=false)
 public class PopulationSNP extends AbstractSNP {
 
-	private int populationKey;
+	private String populationKey;
 	private String accid;
 	private String subHandleName;
 	private String populationName;

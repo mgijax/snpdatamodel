@@ -11,7 +11,7 @@ import lombok.EqualsAndHashCode;
 @EqualsAndHashCode(callSuper=false)
 public class SubSNP extends AbstractSNP {
 	
-	private int subSnpKey;
+	private String subSnpKey;
 	private String accid;
 	private String variationClass;
 	private String alleleSummary;
@@ -20,7 +20,7 @@ public class SubSNP extends AbstractSNP {
 	private String submitterId;
 	private boolean exemplar;
 
-	public LinkedHashMap<Integer, PopulationSNP> populations = new LinkedHashMap<Integer, PopulationSNP>();
+	public LinkedHashMap<String, PopulationSNP> populations = new LinkedHashMap<>();
 	
 	public List<PopulationSNP> getPopulations() {
 		ArrayList<PopulationSNP> pops = new ArrayList<PopulationSNP>();
