@@ -12,7 +12,7 @@ import lombok.EqualsAndHashCode;
 public class ConsensusCoordinateSNP extends AbstractSNP {
 	
 	private String chromosome;
-	private int startCoordinate;
+	private long startCoordinate;
 	private boolean multiCoord;
 	private String strand;
 
