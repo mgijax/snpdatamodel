@@ -68,4 +68,22 @@ public class ConsensusSNP extends AbstractSNP {
 		return ret.toString();
 	}
 
+	@JsonIgnore
+	public boolean hasVepFunctionClass () {
+		for(ConsensusCoordinateSNP cc : getConsensusCoordinates()) {
+			for (ConsensusMarkerSNP m : cc.getMarkers()){
+				String gc = m.getFunctionClass().toLowerCase();
+				if (!gc.contains("within coordinates")
+				&&  !gc.contains("within distance")
+				&&  !gc.endsWith("proximal")
+				&&  !gc.endsWith("distal")
+				&&  !gc.endsWith("upstream")
+				&&  !gc.endsWith("downstream")
+				)
+					return true;
+			}
+		}
+		return false;
+	}
+
 }
